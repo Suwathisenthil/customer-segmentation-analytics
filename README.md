@@ -217,7 +217,7 @@ Data Analytics Intern
 
 GitHub: https://github.com/Suwathisenthil
 
-LinkedIn: https://linkedin.com/in/Suwathi Senthil
+LinkedIn: https://linkedin.com/in/Suwathi-Senthil
 
 ---
 
