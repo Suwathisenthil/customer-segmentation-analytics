@@ -1,0 +1,36 @@
+EXECUTIVE SUMMARY - CUSTOMER SEGMENTATION ANALYSIS
+====================================================
+Prepared for: Executive Leadership Team
+Classification: Internal - Confidential
+
+OVERVIEW
+--------
+Our customer base of 2,000 has been segmented into 4 distinct
+behavioral groups using DBSCAN clustering (Silhouette Score: 0.492),
+enabling precision targeting across marketing, retention, and acquisition functions.
+
+KEY FINDINGS
+------------
+• Estimated Annual Revenue Base : $2,880,000
+• Revenue Currently at Risk     : $233,600 (8.1% of base)
+• Recoverable via Retention     : $70,080
+
+TOP SEGMENT - POTENTIAL LOYALISTS
+  1,970 customers | Est. annual revenue: $2,836,800
+
+HIGHEST RISK - POTENTIAL LOYALISTS
+  $228,800 revenue at risk
+  Recommended immediate action: targeted win-back campaign.
+
+STRATEGIC PRIORITIES
+--------------------
+1. Protect Champions revenue with VIP programme expansion.
+2. Deploy retention campaign for At-Risk segment (ROI est. positive within 90 days).
+3. Accelerate onboarding for New/Potential Loyalists to reduce early churn.
+
+NEXT STEPS
+----------
+• Integrate segments into CRM for automated campaign triggers.
+• Re-run segmentation quarterly; monitor segment migration rate.
+• Establish KPI ownership per segment across Marketing and CX teams.
+====================================================

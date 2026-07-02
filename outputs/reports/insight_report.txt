@@ -1,0 +1,32 @@
+============================================================
+AUTOMATED BUSINESS INSIGHT REPORT
+============================================================
+
+Segment : Champions (n=10)
+Average CLV Proxy : $7,094.05
+Average Spend     : 50.60
+Loyalty Index     : 0.70
+Returns Rate      : 28.20%
+Action: Investigate product quality due to high return rate.
+------------------------------------------------------------
+Segment : Loyal Customers (n=10)
+Average CLV Proxy : $6,008.38
+Average Spend     : 30.90
+Loyalty Index     : 0.64
+Returns Rate      : 19.50%
+Action: Launch upselling campaigns for loyal customers.
+------------------------------------------------------------
+Segment : Potential Loyalists (n=1970)
+Average CLV Proxy : $3,936.92
+Average Spend     : 50.72
+Loyalty Index     : 0.50
+Returns Rate      : 20.14%
+Action: Run customer re-engagement campaigns.
+------------------------------------------------------------
+Segment : At-Risk (n=10)
+Average CLV Proxy : $867.30
+Average Spend     : 12.40
+Loyalty Index     : 0.43
+Returns Rate      : 23.50%
+Action: Run customer re-engagement campaigns.
+------------------------------------------------------------

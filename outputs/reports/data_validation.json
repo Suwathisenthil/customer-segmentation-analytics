@@ -1,0 +1,38 @@
+{
+  "shape": [
+    2000,
+    10
+  ],
+  "columns": [
+    "customer_id",
+    "age",
+    "annual_income",
+    "spending_score",
+    "purchase_freq",
+    "avg_order_value",
+    "tenure_months",
+    "returns_rate",
+    "gender",
+    "region"
+  ],
+  "missing_values": {
+    "customer_id": 0,
+    "age": 0,
+    "annual_income": 0,
+    "spending_score": 0,
+    "purchase_freq": 0,
+    "avg_order_value": 0,
+    "tenure_months": 0,
+    "returns_rate": 0,
+    "gender": 0,
+    "region": 0
+  },
+  "duplicate_rows": 0,
+  "schema_violations": [],
+  "outlier_flags": {
+    "annual_income": 8,
+    "avg_order_value": 5
+  },
+  "passed": true,
+  "total_issues": 0
+}

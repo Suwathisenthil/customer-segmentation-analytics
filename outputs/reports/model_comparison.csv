@@ -1,0 +1,5 @@
+model,n_clusters,silhouette,davies_bouldin,calinski_harabasz,rank
+DBSCAN,4,0.4922,0.7457,79.05,1
+KMeans,2,0.1981,1.8666,529.18,2
+GMM,2,0.1573,2.1905,386.05,3
+Agglomerative,2,0.1538,2.0806,386.65,4

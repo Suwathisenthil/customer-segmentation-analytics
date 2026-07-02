@@ -1,0 +1,380 @@
+2026-06-26 04:03:13 | INFO     | main                      | ============================================================
+2026-06-26 04:03:13 | INFO     | main                      | Pipeline START - Customer Segmentation Analysis v2.0.0
+2026-06-26 04:03:13 | INFO     | main                      | ============================================================
+2026-06-26 04:03:13 | INFO     | main                      | Step 1/10 | Data load
+2026-06-26 04:03:13 | WARNING  | src.data_loader           | data/customers.csv not found. Generating synthetic dataset.
+2026-06-26 04:03:13 | INFO     | src.data_loader           | Synthetic dataset generated -> data/customers.csv (2,000 rows)
+2026-06-26 04:03:13 | INFO     | main                      | Raw dataset: 2,000 rows × 10 cols
+2026-06-26 04:03:13 | INFO     | main                      | Step 2/10 | Data validation
+2026-06-26 04:03:13 | INFO     | src.validator             | Data validation complete - PASSED  | Issues: 0
+2026-06-26 04:03:13 | INFO     | main                      | Step 3/10 | Clean & EDA
+2026-06-26 04:03:13 | INFO     | src.preprocessor          | Clean: 2,000 -> 2,000 rows (0 removed)
+2026-06-26 04:03:13 | INFO     | src.preprocessor          | Feature engineering complete: clv_proxy, loyalty_index, net_spend_score
+2026-06-26 04:03:14 | INFO     | src.eda                   | EDA figures saved to outputs/figures/
+2026-06-26 04:03:14 | INFO     | main                      | Step 4/10 | Feature scaling
+2026-06-26 04:03:14 | INFO     | src.preprocessor          | Scaling complete - X shape: (2000, 7)
+2026-06-26 04:03:14 | INFO     | main                      | Step 5/10 | Model comparison (4 algorithms)
+2026-06-26 04:03:15 | INFO     | src.model_comparison      | Optimal k=2 (silhouette=0.198)
+2026-06-26 04:03:15 | INFO     | src.model_comparison      | KMeans          | sil=0.198 | db=1.867 | k=2
+2026-06-26 04:03:15 | INFO     | src.model_comparison      | DBSCAN          | sil=0.492 | db=0.746 | k=4
+2026-06-26 04:03:15 | INFO     | src.model_comparison      | Agglomerative   | sil=0.154 | db=2.081 | k=2
+2026-06-26 04:03:15 | INFO     | src.model_comparison      | GMM             | sil=0.157 | db=2.191 | k=2
+2026-06-26 04:03:15 | INFO     | src.model_comparison      | Model comparison chart saved.
+2026-06-26 04:03:15 | INFO     | src.model_comparison      | Best model: DBSCAN (silhouette=0.4922)
+2026-06-26 04:03:15 | INFO     | main                      | Step 6/10 | Segment labelling & explainability
+2026-06-26 04:03:15 | INFO     | src.insights              | Segments labelled: ['Champions', 'Loyal Customers', 'Potential Loyalists', 'At-Risk']
+2026-06-26 04:03:15 | INFO     | src.insights              | Insight report saved -> outputs/reports/insight_report.txt
+2026-06-26 04:03:26 | INFO     | main                      | ============================================================
+2026-06-26 04:03:26 | INFO     | main                      | Pipeline START - Customer Segmentation Analysis v2.0.0
+2026-06-26 04:03:26 | INFO     | main                      | ============================================================
+2026-06-26 04:03:26 | INFO     | main                      | Step 1/10 | Data load
+2026-06-26 04:03:26 | INFO     | src.data_loader           | Dataset loaded from data/customers.csv - 2,000 rows
+2026-06-26 04:03:26 | INFO     | main                      | Raw dataset: 2,000 rows × 10 cols
+2026-06-26 04:03:26 | INFO     | main                      | Step 2/10 | Data validation
+2026-06-26 04:03:26 | INFO     | src.validator             | Data validation complete - PASSED  | Issues: 0
+2026-06-26 04:03:26 | INFO     | main                      | Step 3/10 | Clean & EDA
+2026-06-26 04:03:26 | INFO     | src.preprocessor          | Clean: 2,000 -> 2,000 rows (0 removed)
+2026-06-26 04:03:26 | INFO     | src.preprocessor          | Feature engineering complete: clv_proxy, loyalty_index, net_spend_score
+2026-06-26 04:03:27 | INFO     | src.eda                   | EDA figures saved to outputs/figures/
+2026-06-26 04:03:27 | INFO     | main                      | Step 4/10 | Feature scaling
+2026-06-26 04:03:27 | INFO     | src.preprocessor          | Scaling complete - X shape: (2000, 7)
+2026-06-26 04:03:27 | INFO     | main                      | Step 5/10 | Model comparison (4 algorithms)
+2026-06-26 04:03:28 | INFO     | src.model_comparison      | Optimal k=2 (silhouette=0.198)
+2026-06-26 04:03:28 | INFO     | src.model_comparison      | KMeans          | sil=0.198 | db=1.867 | k=2
+2026-06-26 04:03:28 | INFO     | src.model_comparison      | DBSCAN          | sil=0.492 | db=0.746 | k=4
+2026-06-26 04:03:28 | INFO     | src.model_comparison      | Agglomerative   | sil=0.154 | db=2.081 | k=2
+2026-06-26 04:03:28 | INFO     | src.model_comparison      | GMM             | sil=0.157 | db=2.191 | k=2
+2026-06-26 04:03:28 | INFO     | src.model_comparison      | Model comparison chart saved.
+2026-06-26 04:03:28 | INFO     | src.model_comparison      | Best model: DBSCAN (silhouette=0.4922)
+2026-06-26 04:03:28 | INFO     | main                      | Step 6/10 | Segment labelling & explainability
+2026-06-26 04:03:28 | INFO     | src.insights              | Segments labelled: ['Champions', 'Loyal Customers', 'Potential Loyalists', 'At-Risk']
+2026-06-26 04:03:28 | INFO     | src.insights              | Insight report saved -> outputs/reports/insight_report.txt
+2026-06-26 04:03:28 | INFO     | src.explainability        | Explainability complete - sample of 500 saved.
+2026-06-26 04:03:28 | INFO     | main                      | Step 7/10 | Business KPI calculation
+2026-06-26 04:03:28 | INFO     | src.business_kpi          | Churn risk computed | High-risk: 292
+2026-06-26 04:03:28 | INFO     | src.business_kpi          | Total revenue at risk: $233,600
+2026-06-26 04:03:28 | INFO     | src.business_kpi          | Marketing ROI estimation complete.
+2026-06-26 04:03:28 | INFO     | main                      | Step 8/10 | Recommendation engine
+2026-06-26 04:03:28 | INFO     | src.recommendation        | Product recommendations assigned per segment.
+2026-06-26 04:03:29 | INFO     | src.recommendation        | Similar-customer lookup complete - 198 records.
+2026-06-26 04:03:29 | INFO     | main                      | Step 9/10 | Dashboard generation
+2026-06-26 04:03:29 | INFO     | src.report                | Segment profile chart saved (matplotlib fallback).
+2026-06-26 04:03:29 | WARNING  | src.report                | Plotly not available - radar chart skipped.
+2026-06-26 04:03:29 | INFO     | src.dashboard             | Executive dashboard (matplotlib) saved -> outputs/reports/executive_dashboard.png
+2026-06-26 04:03:29 | INFO     | src.dashboard             | Interactive explorer (matplotlib) saved -> outputs/reports/interactive_explorer.png
+2026-06-26 04:03:29 | INFO     | main                      | Step 10/10 | Executive summary
+2026-06-26 04:03:29 | WARNING  | src.executive_summary     | API call failed (No module named 'anthropic'). Using template summary.
+2026-06-26 04:03:29 | INFO     | src.executive_summary     | Executive summary saved.
+2026-06-26 04:03:30 | INFO     | main                      | Pipeline COMPLETE in 3.1s - outputs in outputs/
+2026-06-26 04:03:30 | INFO     | main                      | ============================================================
+2026-06-26 04:04:03 | INFO     | src.preprocessor          | Clean: 105 -> 100 rows (5 removed)
+2026-06-26 04:04:03 | INFO     | src.preprocessor          | Clean: 100 -> 99 rows (1 removed)
+2026-06-26 04:04:03 | INFO     | src.preprocessor          | Clean: 100 -> 100 rows (0 removed)
+2026-06-26 04:04:03 | INFO     | src.preprocessor          | Feature engineering complete: clv_proxy, loyalty_index, net_spend_score
+2026-06-26 04:04:03 | INFO     | src.preprocessor          | Scaling complete - X shape: (100, 7)
+2026-06-26 04:04:03 | INFO     | src.validator             | Data validation complete - PASSED  | Issues: 0
+2026-06-26 04:04:03 | INFO     | src.validator             | Data validation complete - WARNING ⚠ | Issues: 1
+2026-06-26 04:04:03 | INFO     | src.validator             | Data validation complete - WARNING ⚠ | Issues: 1
+2026-06-26 04:04:03 | INFO     | src.business_kpi          | Churn risk computed | High-risk: 7
+2026-06-26 04:04:03 | INFO     | src.business_kpi          | Total revenue at risk: $5,600
+2026-06-26 04:04:03 | INFO     | src.business_kpi          | Marketing ROI estimation complete.
+2026-06-26 04:04:03 | INFO     | src.recommendation        | Product recommendations assigned per segment.
+2026-06-26 04:04:03 | INFO     | src.recommendation        | Product recommendations assigned per segment.
+2026-06-27 10:59:26 | INFO     | main                      | ============================================================
+2026-06-27 10:59:26 | INFO     | main                      | Pipeline START � Customer Segmentation Analysis v2.0.0
+2026-06-27 10:59:26 | INFO     | main                      | ============================================================
+2026-06-27 10:59:26 | INFO     | main                      | Step 1/10 | Data load
+2026-06-27 10:59:26 | INFO     | src.data_loader           | Dataset loaded from data/customers.csv � 2,000 rows
+2026-06-27 10:59:26 | INFO     | main                      | Raw dataset: 2,000 rows � 10 cols
+2026-06-27 10:59:26 | INFO     | main                      | Step 2/10 | Data validation
+2026-06-27 10:59:26 | INFO     | main                      | Step 3/10 | Clean & EDA
+2026-06-27 10:59:26 | INFO     | src.preprocessor          | Feature engineering complete: clv_proxy, loyalty_index, net_spend_score
+2026-06-27 10:59:27 | INFO     | src.eda                   | EDA figures saved to outputs/figures/
+2026-06-27 10:59:27 | INFO     | main                      | Step 4/10 | Feature scaling
+2026-06-27 10:59:27 | INFO     | src.preprocessor          | Scaling complete � X shape: (2000, 7)
+2026-06-27 10:59:27 | INFO     | main                      | Step 5/10 | Model comparison (4 algorithms)
+2026-06-27 10:59:31 | INFO     | src.model_comparison      | Optimal k=2 (silhouette=0.198)
+2026-06-27 10:59:31 | INFO     | src.model_comparison      | KMeans          | sil=0.198 | db=1.867 | k=2
+2026-06-27 10:59:31 | INFO     | src.model_comparison      | DBSCAN          | sil=0.492 | db=0.746 | k=4
+2026-06-27 10:59:33 | INFO     | src.model_comparison      | Agglomerative   | sil=0.154 | db=2.081 | k=2
+2026-06-27 10:59:33 | INFO     | src.model_comparison      | GMM             | sil=0.157 | db=2.191 | k=2
+2026-06-27 10:59:33 | INFO     | src.model_comparison      | Model comparison chart saved.
+2026-06-27 10:59:33 | INFO     | src.model_comparison      | Best model: DBSCAN (silhouette=0.4922)
+2026-06-27 10:59:33 | INFO     | main                      | Step 6/10 | Segment labelling & explainability
+2026-06-27 10:59:33 | INFO     | src.insights              | Segments labelled: ['Champions', 'Loyal Customers', 'Potential Loyalists', 'At-Risk']
+2026-06-27 11:07:23 | INFO     | main                      | ============================================================
+2026-06-27 11:07:23 | INFO     | main                      | Pipeline START � Customer Segmentation Analysis v2.0.0
+2026-06-27 11:07:23 | INFO     | main                      | ============================================================
+2026-06-27 11:07:23 | INFO     | main                      | Step 1/10 | Data load
+2026-06-27 11:07:23 | INFO     | src.data_loader           | Dataset loaded from data/customers.csv � 2,000 rows
+2026-06-27 11:07:23 | INFO     | main                      | Raw dataset: 2,000 rows � 10 cols
+2026-06-27 11:07:23 | INFO     | main                      | Step 2/10 | Data validation
+2026-06-27 11:07:23 | INFO     | main                      | Step 3/10 | Clean & EDA
+2026-06-27 11:07:23 | INFO     | src.preprocessor          | Feature engineering complete: clv_proxy, loyalty_index, net_spend_score
+2026-06-27 11:07:24 | INFO     | src.eda                   | EDA figures saved to outputs/figures/
+2026-06-27 11:07:24 | INFO     | main                      | Step 4/10 | Feature scaling
+2026-06-27 11:07:24 | INFO     | src.preprocessor          | Scaling complete � X shape: (2000, 7)
+2026-06-27 11:07:24 | INFO     | main                      | Step 5/10 | Model comparison (4 algorithms)
+2026-06-27 11:07:27 | INFO     | src.model_comparison      | Optimal k=2 (silhouette=0.198)
+2026-06-27 11:07:27 | INFO     | src.model_comparison      | KMeans          | sil=0.198 | db=1.867 | k=2
+2026-06-27 11:07:27 | INFO     | src.model_comparison      | DBSCAN          | sil=0.492 | db=0.746 | k=4
+2026-06-27 11:07:27 | INFO     | src.model_comparison      | Agglomerative   | sil=0.154 | db=2.081 | k=2
+2026-06-27 11:07:27 | INFO     | src.model_comparison      | GMM             | sil=0.157 | db=2.191 | k=2
+2026-06-27 11:07:28 | INFO     | src.model_comparison      | Model comparison chart saved.
+2026-06-27 11:07:28 | INFO     | src.model_comparison      | Best model: DBSCAN (silhouette=0.4922)
+2026-06-27 11:07:28 | INFO     | main                      | Step 6/10 | Segment labelling & explainability
+2026-06-27 11:07:28 | INFO     | src.insights              | Segments labelled: ['Champions', 'Loyal Customers', 'Potential Loyalists', 'At-Risk']
+2026-06-27 11:07:28 | INFO     | src.insights              | Insight report saved: outputs/reports/insight_report.txt
+2026-06-27 11:07:28 | INFO     | src.explainability        | Explainability complete � sample of 500 saved.
+2026-06-27 11:07:28 | INFO     | main                      | Step 7/10 | Business KPI calculation
+2026-06-27 11:07:28 | INFO     | src.business_kpi          | Churn risk computed | High-risk: 292
+2026-06-27 11:07:28 | INFO     | src.business_kpi          | Total revenue at risk: $233,600
+2026-06-27 11:07:28 | INFO     | src.business_kpi          | Marketing ROI estimation complete.
+2026-06-27 11:07:28 | INFO     | main                      | Step 8/10 | Recommendation engine
+2026-06-27 11:07:28 | INFO     | src.recommendation        | Product recommendations assigned per segment.
+2026-06-27 11:07:28 | INFO     | src.recommendation        | Similar-customer lookup complete � 198 records.
+2026-06-27 11:07:28 | INFO     | main                      | Step 9/10 | Dashboard generation
+2026-06-27 11:07:28 | INFO     | src.report                | Segment profile chart saved (matplotlib fallback).
+2026-06-27 11:07:28 | WARNING  | src.report                | Plotly not available � radar chart skipped.
+2026-06-27 11:07:29 | INFO     | main                      | Step 10/10 | Executive summary
+2026-06-27 11:07:29 | WARNING  | src.executive_summary     | API call failed (No module named 'anthropic'). Using template summary.
+2026-06-27 11:07:29 | INFO     | src.executive_summary     | Executive summary saved.
+2026-06-27 11:07:29 | INFO     | main                      | Pipeline COMPLETE in 6.3s � outputs in outputs/
+2026-06-27 11:07:29 | INFO     | main                      | ============================================================
+2026-06-27 11:13:56 | INFO     | main                      | ============================================================
+2026-06-27 11:13:56 | INFO     | main                      | Pipeline START � Customer Segmentation Analysis v2.0.0
+2026-06-27 11:13:56 | INFO     | main                      | ============================================================
+2026-06-27 11:13:56 | INFO     | main                      | Step 1/10 | Data load
+2026-06-27 11:13:56 | INFO     | src.data_loader           | Dataset loaded from data/customers.csv � 2,000 rows
+2026-06-27 11:13:56 | INFO     | main                      | Raw dataset: 2,000 rows � 10 cols
+2026-06-27 11:13:56 | INFO     | main                      | Step 2/10 | Data validation
+2026-06-27 11:13:56 | INFO     | main                      | Step 3/10 | Clean & EDA
+2026-06-27 11:13:56 | INFO     | src.preprocessor          | Feature engineering complete: clv_proxy, loyalty_index, net_spend_score
+2026-06-27 11:13:56 | INFO     | src.eda                   | EDA figures saved to outputs/figures/
+2026-06-27 11:13:56 | INFO     | main                      | Step 4/10 | Feature scaling
+2026-06-27 11:13:56 | INFO     | src.preprocessor          | Scaling complete � X shape: (2000, 7)
+2026-06-27 11:13:56 | INFO     | main                      | Step 5/10 | Model comparison (4 algorithms)
+2026-06-27 11:13:59 | INFO     | src.model_comparison      | Optimal k=2 (silhouette=0.198)
+2026-06-27 11:13:59 | INFO     | src.model_comparison      | KMeans          | sil=0.198 | db=1.867 | k=2
+2026-06-27 11:13:59 | INFO     | src.model_comparison      | DBSCAN          | sil=0.492 | db=0.746 | k=4
+2026-06-27 11:14:00 | INFO     | src.model_comparison      | Agglomerative   | sil=0.154 | db=2.081 | k=2
+2026-06-27 11:14:00 | INFO     | src.model_comparison      | GMM             | sil=0.157 | db=2.191 | k=2
+2026-06-27 11:14:00 | INFO     | src.model_comparison      | Model comparison chart saved.
+2026-06-27 11:14:00 | INFO     | src.model_comparison      | Best model: DBSCAN (silhouette=0.4922)
+2026-06-27 11:14:00 | INFO     | main                      | Step 6/10 | Segment labelling & explainability
+2026-06-27 11:14:00 | INFO     | src.insights              | Segments labelled: ['Champions', 'Loyal Customers', 'Potential Loyalists', 'At-Risk']
+2026-06-27 11:14:00 | INFO     | src.insights              | Insight report saved: outputs/reports/insight_report.txt
+2026-06-27 11:14:00 | INFO     | src.explainability        | Explainability complete � sample of 500 saved.
+2026-06-27 11:14:00 | INFO     | main                      | Step 7/10 | Business KPI calculation
+2026-06-27 11:14:00 | INFO     | src.business_kpi          | Churn risk computed | High-risk: 292
+2026-06-27 11:14:00 | INFO     | src.business_kpi          | Total revenue at risk: $233,600
+2026-06-27 11:14:00 | INFO     | src.business_kpi          | Marketing ROI estimation complete.
+2026-06-27 11:14:00 | INFO     | main                      | Step 8/10 | Recommendation engine
+2026-06-27 11:14:00 | INFO     | src.recommendation        | Product recommendations assigned per segment.
+2026-06-27 11:14:00 | INFO     | src.recommendation        | Similar-customer lookup complete � 198 records.
+2026-06-27 11:14:00 | INFO     | main                      | Step 9/10 | Dashboard generation
+2026-06-27 11:17:09 | INFO     | main                      | ============================================================
+2026-06-27 11:17:09 | INFO     | main                      | Pipeline START � Customer Segmentation Analysis v2.0.0
+2026-06-27 11:17:09 | INFO     | main                      | ============================================================
+2026-06-27 11:17:09 | INFO     | main                      | Step 1/10 | Data load
+2026-06-27 11:17:09 | INFO     | src.data_loader           | Dataset loaded from data/customers.csv � 2,000 rows
+2026-06-27 11:17:09 | INFO     | main                      | Raw dataset: 2,000 rows � 10 cols
+2026-06-27 11:17:09 | INFO     | main                      | Step 2/10 | Data validation
+2026-06-27 11:17:09 | INFO     | main                      | Step 3/10 | Clean & EDA
+2026-06-27 11:17:09 | INFO     | src.preprocessor          | Feature engineering complete: clv_proxy, loyalty_index, net_spend_score
+2026-06-27 11:17:10 | INFO     | src.eda                   | EDA figures saved to outputs/figures/
+2026-06-27 11:17:10 | INFO     | main                      | Step 4/10 | Feature scaling
+2026-06-27 11:17:10 | INFO     | src.preprocessor          | Scaling complete � X shape: (2000, 7)
+2026-06-27 11:17:10 | INFO     | main                      | Step 5/10 | Model comparison (4 algorithms)
+2026-06-27 11:17:14 | INFO     | src.model_comparison      | Optimal k=2 (silhouette=0.198)
+2026-06-27 11:17:14 | INFO     | src.model_comparison      | KMeans          | sil=0.198 | db=1.867 | k=2
+2026-06-27 11:17:15 | INFO     | src.model_comparison      | DBSCAN          | sil=0.492 | db=0.746 | k=4
+2026-06-27 11:17:15 | INFO     | src.model_comparison      | Agglomerative   | sil=0.154 | db=2.081 | k=2
+2026-06-27 11:17:15 | INFO     | src.model_comparison      | GMM             | sil=0.157 | db=2.191 | k=2
+2026-06-27 11:17:15 | INFO     | src.model_comparison      | Model comparison chart saved.
+2026-06-27 11:17:15 | INFO     | src.model_comparison      | Best model: DBSCAN (silhouette=0.4922)
+2026-06-27 11:17:15 | INFO     | main                      | Step 6/10 | Segment labelling & explainability
+2026-06-27 11:17:15 | INFO     | src.insights              | Segments labelled: ['Champions', 'Loyal Customers', 'Potential Loyalists', 'At-Risk']
+2026-06-27 11:17:15 | INFO     | src.insights              | Insight report saved: outputs/reports/insight_report.txt
+2026-06-27 11:17:15 | INFO     | src.explainability        | Explainability complete � sample of 500 saved.
+2026-06-27 11:17:15 | INFO     | main                      | Step 7/10 | Business KPI calculation
+2026-06-27 11:17:15 | INFO     | src.business_kpi          | Churn risk computed | High-risk: 292
+2026-06-27 11:17:15 | INFO     | src.business_kpi          | Total revenue at risk: $233,600
+2026-06-27 11:17:15 | INFO     | src.business_kpi          | Marketing ROI estimation complete.
+2026-06-27 11:17:15 | INFO     | main                      | Step 8/10 | Recommendation engine
+2026-06-27 11:17:15 | INFO     | src.recommendation        | Product recommendations assigned per segment.
+2026-06-27 11:17:16 | INFO     | src.recommendation        | Similar-customer lookup complete � 198 records.
+2026-06-27 11:17:16 | INFO     | main                      | Step 9/10 | Dashboard generation
+2026-06-27 11:17:16 | INFO     | src.dashboard             | Executive dashboard saved -> outputs/reports/executive_dashboard.html
+2026-06-27 11:17:16 | INFO     | src.dashboard             | Interactive explorer saved -> outputs/reports/interactive_explorer.html
+2026-06-27 11:17:16 | INFO     | main                      | Step 10/10 | Executive summary
+2026-06-27 11:17:16 | WARNING  | src.executive_summary     | API call failed (No module named 'anthropic'). Using template summary.
+2026-06-27 11:17:16 | INFO     | src.executive_summary     | Executive summary saved.
+2026-06-27 11:17:16 | INFO     | main                      | Pipeline COMPLETE in 6.7s � outputs in outputs/
+2026-06-27 11:17:16 | INFO     | main                      | ============================================================
+2026-06-27 11:23:50 | INFO     | main                      | ============================================================
+2026-06-27 11:23:50 | INFO     | main                      | Pipeline START � Customer Segmentation Analysis v2.0.0
+2026-06-27 11:23:50 | INFO     | main                      | ============================================================
+2026-06-27 11:23:50 | INFO     | main                      | Step 1/10 | Data load
+2026-06-27 11:23:50 | INFO     | src.data_loader           | Dataset loaded from data/customers.csv � 2,000 rows
+2026-06-27 11:23:50 | INFO     | main                      | Raw dataset: 2,000 rows � 10 cols
+2026-06-27 11:23:50 | INFO     | main                      | Step 2/10 | Data validation
+2026-06-27 11:23:50 | INFO     | main                      | Step 3/10 | Clean & EDA
+2026-06-27 11:23:50 | INFO     | src.preprocessor          | Feature engineering complete: clv_proxy, loyalty_index, net_spend_score
+2026-06-27 11:23:50 | INFO     | src.eda                   | EDA figures saved to outputs/figures/
+2026-06-27 11:23:50 | INFO     | main                      | Step 4/10 | Feature scaling
+2026-06-27 11:23:51 | INFO     | src.preprocessor          | Scaling complete � X shape: (2000, 7)
+2026-06-27 11:23:51 | INFO     | main                      | Step 5/10 | Model comparison (4 algorithms)
+2026-06-27 11:23:55 | INFO     | src.model_comparison      | Optimal k=2 (silhouette=0.198)
+2026-06-27 11:23:55 | INFO     | src.model_comparison      | Optimal K plot saved.
+2026-06-27 11:23:55 | INFO     | src.model_comparison      | KMeans          | sil=0.198 | db=1.867 | k=2
+2026-06-27 11:23:55 | INFO     | src.model_comparison      | DBSCAN          | sil=0.492 | db=0.746 | k=4
+2026-06-27 11:23:55 | INFO     | src.model_comparison      | Agglomerative   | sil=0.154 | db=2.081 | k=2
+2026-06-27 11:23:55 | INFO     | src.model_comparison      | GMM             | sil=0.157 | db=2.191 | k=2
+2026-06-27 11:23:56 | INFO     | src.model_comparison      | Model comparison chart saved.
+2026-06-27 11:23:56 | INFO     | src.model_comparison      | Best model: DBSCAN (silhouette=0.4922)
+2026-06-27 11:23:56 | INFO     | main                      | Step 6/10 | Segment labelling & explainability
+2026-06-27 11:23:56 | INFO     | src.insights              | Segments labelled: ['Champions', 'Loyal Customers', 'Potential Loyalists', 'At-Risk']
+2026-06-27 11:23:56 | INFO     | src.insights              | Insight report saved: outputs/reports/insight_report.txt
+2026-06-27 11:23:56 | INFO     | src.explainability        | Explainability complete � sample of 500 saved.
+2026-06-27 11:23:56 | INFO     | main                      | Step 7/10 | Business KPI calculation
+2026-06-27 11:23:56 | INFO     | src.business_kpi          | Churn risk computed | High-risk: 292
+2026-06-27 11:23:56 | INFO     | src.business_kpi          | Total revenue at risk: $233,600
+2026-06-27 11:23:56 | INFO     | src.business_kpi          | Marketing ROI estimation complete.
+2026-06-27 11:23:56 | INFO     | main                      | Step 8/10 | Recommendation engine
+2026-06-27 11:23:56 | INFO     | src.recommendation        | Product recommendations assigned per segment.
+2026-06-27 11:23:56 | INFO     | src.recommendation        | Similar-customer lookup complete � 198 records.
+2026-06-27 11:23:56 | INFO     | main                      | Step 9/10 | Dashboard generation
+2026-06-27 11:23:56 | INFO     | src.dashboard             | Executive dashboard saved -> outputs/reports/executive_dashboard.html
+2026-06-27 11:23:56 | INFO     | src.dashboard             | Interactive explorer saved -> outputs/reports/interactive_explorer.html
+2026-06-27 11:23:56 | INFO     | main                      | Step 10/10 | Executive summary
+2026-06-27 11:23:56 | WARNING  | src.executive_summary     | API call failed (No module named 'anthropic'). Using template summary.
+2026-06-27 11:23:56 | INFO     | src.executive_summary     | Executive summary saved.
+2026-06-27 11:23:56 | INFO     | main                      | Pipeline COMPLETE in 6.7s � outputs in outputs/
+2026-06-27 11:23:56 | INFO     | main                      | ============================================================
+2026-07-01 18:10:50 | INFO     | main                      | ============================================================
+2026-07-01 18:10:50 | INFO     | main                      | Pipeline START � Customer Segmentation Analysis v2.0.0
+2026-07-01 18:10:50 | INFO     | main                      | ============================================================
+2026-07-01 18:10:50 | INFO     | main                      | Step 1/10 | Data load
+2026-07-01 18:10:50 | INFO     | src.data_loader           | Dataset loaded from data/customers.csv � 2,000 rows
+2026-07-01 18:10:50 | INFO     | main                      | Raw dataset: 2,000 rows � 10 cols
+2026-07-01 18:10:50 | INFO     | main                      | Step 2/10 | Data validation
+2026-07-01 18:10:50 | INFO     | main                      | Step 3/10 | Clean & EDA
+2026-07-01 18:10:50 | INFO     | src.preprocessor          | Feature engineering complete: clv_proxy, loyalty_index, net_spend_score
+2026-07-01 18:10:51 | INFO     | src.eda                   | EDA figures saved to outputs/figures/
+2026-07-01 18:10:51 | INFO     | main                      | Step 4/10 | Feature scaling
+2026-07-01 18:10:52 | INFO     | src.preprocessor          | Scaling complete � X shape: (2000, 7)
+2026-07-01 18:10:52 | INFO     | main                      | Step 5/10 | Model comparison (4 algorithms)
+2026-07-01 18:10:56 | INFO     | src.model_comparison      | Optimal k=2 (silhouette=0.198)
+2026-07-01 18:10:56 | INFO     | src.model_comparison      | Optimal K plot saved.
+2026-07-01 18:10:56 | INFO     | src.model_comparison      | KMeans          | sil=0.198 | db=1.867 | k=2
+2026-07-01 18:10:56 | INFO     | src.model_comparison      | DBSCAN          | sil=0.492 | db=0.746 | k=4
+2026-07-01 18:10:56 | INFO     | src.model_comparison      | Agglomerative   | sil=0.154 | db=2.081 | k=2
+2026-07-01 18:10:56 | INFO     | src.model_comparison      | GMM             | sil=0.157 | db=2.191 | k=2
+2026-07-01 18:10:57 | INFO     | src.model_comparison      | Model comparison chart saved.
+2026-07-01 18:10:57 | INFO     | src.model_comparison      | Best model: DBSCAN (silhouette=0.4922)
+2026-07-01 18:10:57 | INFO     | main                      | Step 6/10 | Segment labelling & explainability
+2026-07-01 18:10:57 | INFO     | src.insights              | Segments labelled: ['Champions', 'Loyal Customers', 'Potential Loyalists', 'At-Risk']
+2026-07-01 18:10:57 | INFO     | src.insights              | Insight report saved: outputs/reports/insight_report.txt
+2026-07-01 18:10:57 | INFO     | src.explainability        | Explainability complete � sample of 500 saved.
+2026-07-01 18:10:57 | INFO     | main                      | Step 7/10 | Business KPI calculation
+2026-07-01 18:10:57 | INFO     | src.business_kpi          | Churn risk computed | High-risk: 292
+2026-07-01 18:10:57 | INFO     | src.business_kpi          | Total revenue at risk: $233,600
+2026-07-01 18:10:57 | INFO     | src.business_kpi          | Marketing ROI estimation complete.
+2026-07-01 18:10:57 | INFO     | main                      | Step 8/10 | Recommendation engine
+2026-07-01 18:10:57 | INFO     | src.recommendation        | Product recommendations assigned per segment.
+2026-07-01 18:10:57 | INFO     | src.recommendation        | Similar-customer lookup complete � 198 records.
+2026-07-01 18:10:57 | INFO     | main                      | Step 9/10 | Dashboard generation
+2026-07-01 18:10:58 | INFO     | src.dashboard             | Executive dashboard saved -> outputs/reports/executive_dashboard.html
+2026-07-01 18:10:58 | INFO     | src.dashboard             | Interactive explorer saved -> outputs/reports/interactive_explorer.html
+2026-07-01 18:10:58 | INFO     | main                      | Step 10/10 | Executive summary
+2026-07-01 18:10:58 | WARNING  | src.executive_summary     | API call failed (No module named 'anthropic'). Using template summary.
+2026-07-01 18:10:58 | INFO     | src.executive_summary     | Executive summary saved.
+2026-07-01 18:10:58 | INFO     | main                      | Pipeline COMPLETE in 7.9s � outputs in outputs/
+2026-07-01 18:10:58 | INFO     | main                      | ============================================================
+2026-07-01 18:24:15 | INFO     | main                      | ============================================================
+2026-07-01 18:24:15 | INFO     | main                      | Pipeline START � Customer Segmentation Analysis v2.0.0
+2026-07-01 18:24:15 | INFO     | main                      | ============================================================
+2026-07-01 18:24:15 | INFO     | main                      | Step 1/10 | Data load
+2026-07-01 18:24:15 | INFO     | src.data_loader           | Dataset loaded from data/customers.csv � 2,000 rows
+2026-07-01 18:24:15 | INFO     | main                      | Raw dataset: 2,000 rows � 10 cols
+2026-07-01 18:24:15 | INFO     | main                      | Step 2/10 | Data validation
+2026-07-01 18:24:16 | INFO     | main                      | Step 3/10 | Clean & EDA
+2026-07-01 18:24:16 | INFO     | src.preprocessor          | Clean: 2,000 -> 2,000 rows
+2026-07-01 18:24:16 | INFO     | src.preprocessor          | Feature engineering complete: clv_proxy, loyalty_index, net_spend_score
+2026-07-01 18:24:16 | INFO     | src.eda                   | EDA figures saved to outputs/figures/
+2026-07-01 18:24:16 | INFO     | main                      | Step 4/10 | Feature scaling
+2026-07-01 18:24:16 | INFO     | src.preprocessor          | Scaling complete - X shape: (2000, 7)
+2026-07-01 18:24:16 | INFO     | main                      | Step 5/10 | Model comparison (4 algorithms)
+2026-07-01 18:24:20 | INFO     | src.model_comparison      | Optimal k=2 (silhouette=0.198)
+2026-07-01 18:24:20 | INFO     | src.model_comparison      | Optimal K plot saved.
+2026-07-01 18:24:20 | INFO     | src.model_comparison      | KMeans          | sil=0.198 | db=1.867 | k=2
+2026-07-01 18:24:20 | INFO     | src.model_comparison      | DBSCAN          | sil=0.492 | db=0.746 | k=4
+2026-07-01 18:24:20 | INFO     | src.model_comparison      | Agglomerative   | sil=0.154 | db=2.081 | k=2
+2026-07-01 18:24:20 | INFO     | src.model_comparison      | GMM             | sil=0.157 | db=2.191 | k=2
+2026-07-01 18:24:21 | INFO     | src.model_comparison      | Model comparison chart saved.
+2026-07-01 18:24:21 | INFO     | src.model_comparison      | Best model: DBSCAN (silhouette=0.4922)
+2026-07-01 18:24:21 | INFO     | main                      | Step 6/10 | Segment labelling & explainability
+2026-07-01 18:24:21 | INFO     | src.insights              | Segments labelled: ['Champions', 'Loyal Customers', 'Potential Loyalists', 'At-Risk']
+2026-07-01 18:24:21 | INFO     | src.insights              | Insight report saved: outputs/reports/insight_report.txt
+2026-07-01 18:24:21 | INFO     | src.explainability        | Explainability complete - sample of 500 saved.
+2026-07-01 18:24:21 | INFO     | main                      | Step 7/10 | Business KPI calculation
+2026-07-01 18:24:21 | INFO     | src.business_kpi          | Churn risk computed | High-risk: 292
+2026-07-01 18:24:21 | INFO     | src.business_kpi          | Total revenue at risk: $233,600
+2026-07-01 18:24:21 | INFO     | src.business_kpi          | Marketing ROI estimation complete.
+2026-07-01 18:24:21 | INFO     | main                      | Step 8/10 | Recommendation engine
+2026-07-01 18:24:21 | INFO     | src.recommendation        | Product recommendations assigned per segment.
+2026-07-01 18:24:21 | INFO     | src.recommendation        | Similar-customer lookup complete - 198 records.
+2026-07-01 18:24:21 | INFO     | main                      | Step 9/10 | Dashboard generation
+2026-07-01 18:24:21 | INFO     | src.report                | Radar chart saved -> outputs/reports/radar_chart.html
+2026-07-01 18:24:21 | INFO     | src.dashboard             | Executive dashboard saved -> outputs/reports/executive_dashboard.html
+2026-07-01 18:24:21 | INFO     | src.dashboard             | Interactive explorer saved -> outputs/reports/interactive_explorer.html
+2026-07-01 18:24:21 | INFO     | main                      | Step 10/10 | Executive summary
+2026-07-01 18:24:21 | WARNING  | src.executive_summary     | API call failed (No module named 'anthropic'). Using template summary.
+2026-07-01 18:24:21 | INFO     | src.executive_summary     | Executive summary saved.
+2026-07-01 18:24:21 | INFO     | main                      | Pipeline COMPLETE in 5.8s - outputs in outputs/
+2026-07-01 18:24:21 | INFO     | main                      | ============================================================
+2026-07-01 18:29:17 | INFO     | main                      | ============================================================
+2026-07-01 18:29:17 | INFO     | main                      | Pipeline START - Customer Segmentation Analysis v2.0.0
+2026-07-01 18:29:17 | INFO     | main                      | ============================================================
+2026-07-01 18:29:17 | INFO     | main                      | Step 1/10 | Data load
+2026-07-01 18:29:17 | INFO     | src.data_loader           | Dataset loaded from data/customers.csv - 2,000 rows
+2026-07-01 18:29:17 | INFO     | main                      | Raw dataset: 2,000 rows � 10 cols
+2026-07-01 18:29:17 | INFO     | main                      | Step 2/10 | Data validation
+2026-07-01 18:29:17 | INFO     | src.validator             | Data validation complete - PASSED  | Issues: 0
+2026-07-01 18:29:17 | INFO     | main                      | Step 3/10 | Clean & EDA
+2026-07-01 18:29:17 | INFO     | src.preprocessor          | Clean: 2,000 -> 2,000 rows
+2026-07-01 18:29:17 | INFO     | src.preprocessor          | Feature engineering complete: clv_proxy, loyalty_index, net_spend_score
+2026-07-01 18:29:18 | INFO     | src.eda                   | EDA figures saved to outputs/figures/
+2026-07-01 18:29:18 | INFO     | main                      | Step 4/10 | Feature scaling
+2026-07-01 18:29:18 | INFO     | src.preprocessor          | Scaling complete - X shape: (2000, 7)
+2026-07-01 18:29:18 | INFO     | main                      | Step 5/10 | Model comparison (4 algorithms)
+2026-07-01 18:29:21 | INFO     | src.model_comparison      | Optimal k=2 (silhouette=0.198)
+2026-07-01 18:29:21 | INFO     | src.model_comparison      | Optimal K plot saved.
+2026-07-01 18:29:21 | INFO     | src.model_comparison      | KMeans          | sil=0.198 | db=1.867 | k=2
+2026-07-01 18:29:21 | INFO     | src.model_comparison      | DBSCAN          | sil=0.492 | db=0.746 | k=4
+2026-07-01 18:29:21 | INFO     | src.model_comparison      | Agglomerative   | sil=0.154 | db=2.081 | k=2
+2026-07-01 18:29:22 | INFO     | src.model_comparison      | GMM             | sil=0.157 | db=2.191 | k=2
+2026-07-01 18:29:22 | INFO     | src.model_comparison      | Model comparison chart saved.
+2026-07-01 18:29:22 | INFO     | src.model_comparison      | Best model: DBSCAN (silhouette=0.4922)
+2026-07-01 18:29:22 | INFO     | main                      | Step 6/10 | Segment labelling & explainability
+2026-07-01 18:29:22 | INFO     | src.insights              | Segments labelled: ['Champions', 'Loyal Customers', 'Potential Loyalists', 'At-Risk']
+2026-07-01 18:29:22 | INFO     | src.insights              | Insight report saved: outputs/reports/insight_report.txt
+2026-07-01 18:29:22 | INFO     | src.explainability        | Explainability complete - sample of 500 saved.
+2026-07-01 18:29:22 | INFO     | main                      | Step 7/10 | Business KPI calculation
+2026-07-01 18:29:22 | INFO     | src.business_kpi          | Churn risk computed | High-risk: 292
+2026-07-01 18:29:22 | INFO     | src.business_kpi          | Total revenue at risk: $233,600
+2026-07-01 18:29:22 | INFO     | src.business_kpi          | Marketing ROI estimation complete.
+2026-07-01 18:29:22 | INFO     | main                      | Step 8/10 | Recommendation engine
+2026-07-01 18:29:22 | INFO     | src.recommendation        | Product recommendations assigned per segment.
+2026-07-01 18:29:22 | INFO     | src.recommendation        | Similar-customer lookup complete - 198 records.
+2026-07-01 18:29:22 | INFO     | main                      | Step 9/10 | Dashboard generation
+2026-07-01 18:29:22 | INFO     | src.report                | Segment profile chart saved -> outputs/reports/segment_profile.html
+2026-07-01 18:29:22 | INFO     | src.report                | Radar chart saved -> outputs/reports/radar_chart.html
+2026-07-01 18:29:22 | INFO     | src.dashboard             | Executive dashboard saved -> outputs/reports/executive_dashboard.html
+2026-07-01 18:29:22 | INFO     | src.dashboard             | Interactive explorer saved -> outputs/reports/interactive_explorer.html
+2026-07-01 18:29:22 | INFO     | main                      | Step 10/10 | Executive summary
+2026-07-01 18:29:22 | WARNING  | src.executive_summary     | API call failed (No module named 'anthropic'). Using template summary.
+2026-07-01 18:29:22 | INFO     | src.executive_summary     | Executive summary saved.
+2026-07-01 18:29:22 | INFO     | main                      | Pipeline COMPLETE in 5.0s - outputs in outputs/
+2026-07-01 18:29:22 | INFO     | main                      | ============================================================
